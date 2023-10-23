@@ -6,10 +6,11 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:48:25 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/23 09:43:59 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/23 10:30:52 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
 int	ft_isalnum(int c)
 {
 	if (ft_isdigit(c) != 0 || ft_isalpha(c) != 0)
@@ -18,4 +19,3 @@ int	ft_isalnum(int c)
 	}
 	return (0);
 }
-
