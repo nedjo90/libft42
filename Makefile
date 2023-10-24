@@ -24,6 +24,8 @@ ft_calloc.c \
 ft_strdup.c \
 ft_substr.c \
 ft_strjoin.c \
+ft_strtrim.c \
+test_strtrim.c \
 test_strjoin.c \
 test_substr.c \
 test_strdup.c \
