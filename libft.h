@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:21:47 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/24 14:21:15 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/24 15:16:11 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -20,6 +20,18 @@
 # include <unistd.h>
 # include <limits.h>
 
+//structure
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+/*
+
+
+
+*/
+//PART1
 //test
 int			test_isalpha(void);
 int			test_isdigit(void);
@@ -43,7 +55,6 @@ int			test_memcmp(void);
 int			test_strnstr(void);
 int			test_atoi(void);
 int			test_calloc(void);
-int			test_isspace(void);
 int			test_strdup(void);
 //fonction
 char		*ft_strchr(const char *s, int c);
@@ -60,7 +71,6 @@ int			ft_toupper(int c);
 int			ft_tolower(int c);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
-int			ft_isspace(int c);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
@@ -70,4 +80,66 @@ void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 void		*ft_memchr(const void *s, int c, size_t n);
 void		*ft_calloc(size_t count, size_t size);
+/*
+
+
+
+*/
+//PART2
+//test
+int			test_substr(void);
+int			test_strjoin(void);
+int			test_strtrim(void);
+int			test_split(void);
+int			test_itoa(void);
+int			test_strmapi(void);
+int			test_striteri(void);
+int			test_putchar_fd(void);
+int			test_putstr_fd(void);
+int			test_putendl_fd(void);
+int			test_putnbr_fd(void);
+//fonction
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strtrim(char const *s1, char const *set);
+char		**ft_split(char const *s, char c);
+char		*ft_itoa(int n);
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void		*ft_striteri(char *s, void (*f)(unsigned int, char *));
+void		ft_putchar_fd(char c, int fd);
+void		ft_putstr_fd(char *s, int fd);
+void		ft_putendl_fd(char *s, int fd);
+void		ft_putnbr_fd(int n, int fd);
+/*
+
+
+
+*/
+//BONUS
+//test
+int			test_lstnew(void);
+int			test_lstadd_front(void);
+int			test_lstsize(void);
+int			test_lstlast(void);
+int			test_lstadd_back(void);
+int			test_lstdelone(void);
+int			test_lstclear(void);
+//function
+t_list		*ft_lstnew(void *content);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+int			ft_lstsize(t_list *lst);
+t_list		*ft_lstlast(t_list *lst);
+void		ft_lstadd_back(t_list **lst, t_list *new);
+void		ft_lstdelone(t_list *lst, void (*del)(void *));
+void		ft_lstclear(t_list **lst, void (*del)(void *));
+/*
+
+
+
+*/
+//PERSO
+//test
+int			test_isspace(void);
+//fonction
+int			ft_isspace(int c);
 #endif

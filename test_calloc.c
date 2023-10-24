@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:48:09 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/24 14:00:32 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/24 15:21:03 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,10 +150,10 @@ int	test_calloc(void)
 	tab19 = (int *) ft_calloc(-10, INT_MAX);
 	tab20 = (int *) calloc(-10, INT_MAX);
 	if ((tab19 == NULL && tab20 == NULL) || memcmp(tab19, tab20, 1) == 0)
-		write(1, "ft_calloc -> test10 : ok!\n", 26);
+		write(1, "ft_calloc -> test10 : ok!", 25);
 	else
 	{
-		write(1, "ft_calloc -> test10 : error!\n", 30);
+		write(1, "ft_calloc -> test10 : error!", 29);
 		test = 0;	
 	}
 	return (test);

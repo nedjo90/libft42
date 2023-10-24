@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 08:51:48 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/24 09:19:18 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/24 15:21:22 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,12 +109,12 @@ int test_atoi(void)
 	char s9[] = "\t\f\va+-+-+-1.542";
 	if(atoi(s9) != ft_atoi(s9))
 	{
-		write(1, "ft_atoi -> test9 : error!\n", 27);
+		write(1, "ft_atoi -> test9 : error!", 26);
 		test = 0;
 	}
 	else
 	{
-		write(1, "ft_atoi -> test9 : ok!\n", 23);
+		write(1, "ft_atoi -> test9 : ok!", 22);
 	}
 	return (test);
 }
