@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 23:19:58 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/23 23:41:20 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/24 14:01:14 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,21 @@ int	test_memcmp(void)
 	}
 	else
 	{
-		write(1, "ft_memcmp -> test10 : ok!", 25);
+		write(1, "ft_memcmp -> test10 : ok!\n", 26);
+	}
+	
+	//test11
+	int tab7[] = {0,1,2,3,4,5,6,7,8,9};
+	int tab8[] = {0,1,2,3,4,5,6,7,8,9};
+
+	if(ft_memcmp(tab7, tab8, -10) != memcmp(tab7,tab8,-10))
+	{
+		write(1,"ft_memcmp -> test11 : error!\n", 28);
+		test = 0;
+	}
+	else
+	{
+		write(1, "ft_memcmp -> test11 : ok!", 25);
 	}
 	return (test);
 

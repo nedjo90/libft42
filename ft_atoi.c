@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 23:14:03 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/24 13:39:12 by nhan             ###   ########.fr       */
+/*   Created: 2023/10/24 08:37:22 by nhan              #+#    #+#             */
+/*   Updated: 2023/10/24 09:17:53 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
+	int	n;
+	int	s;
 
-	i = 0;
-	while (i < n && n > 0)
+	n = 0;
+	s = 1;
+	while (isspace(*str))
+		str++;
+	if (*str == '-')
 	{
-		if (*(unsigned char *)(s1 + i) != \
-			*(unsigned char *)(s2 + i))
-			return (*(unsigned char *)(s1 + i) \
-			- *(unsigned char *)(s2 + i));
-		i++;
+		s *= -1;
+		str++;
 	}
-	return (0);
+	while (*str != '\0' && *str >= '0' && *str <= '9')
+	{
+		n *= 10;
+		n += (*str - 48);
+		str++;
+	}
+	return (n * s);
 }

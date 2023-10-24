@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 23:14:03 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/24 13:39:12 by nhan             ###   ########.fr       */
+/*   Created: 2023/10/24 09:32:19 by nhan              #+#    #+#             */
+/*   Updated: 2023/10/24 13:43:07 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
+	void	*ptr;
 
-	i = 0;
-	while (i < n && n > 0)
-	{
-		if (*(unsigned char *)(s1 + i) != \
-			*(unsigned char *)(s2 + i))
-			return (*(unsigned char *)(s1 + i) \
-			- *(unsigned char *)(s2 + i));
-		i++;
-	}
-	return (0);
+	if (count == 0 || size == 0)
+		return (ft_calloc(1, 1));
+	else if ((count < 0 && size < 0) \
+		|| count >= INT_MAX || size >= INT_MAX)
+		return (NULL);
+	ptr = (void *) malloc(size * count);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, count);
+	return (ptr);
 }

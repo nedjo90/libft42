@@ -18,6 +18,12 @@ ft_strncmp.c \
 ft_memchr.c \
 ft_memcmp.c \
 ft_strnstr.c \
+ft_atoi.c \
+ft_isspace.c \
+ft_calloc.c \
+test_calloc.c \
+test_isspace.c \
+test_atoi.c \
 test_strnstr.c \
 test_memcmp.c \
 test_memchr.c \

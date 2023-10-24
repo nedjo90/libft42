@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   test_isspace.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 23:14:03 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/24 13:39:12 by nhan             ###   ########.fr       */
+/*   Created: 2023/10/24 09:40:42 by nhan              #+#    #+#             */
+/*   Updated: 2023/10/24 09:43:42 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int test_isspace(void)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n && n > 0)
+	int test = 1;
+	int c = 0;
+	while (c < 128)
 	{
-		if (*(unsigned char *)(s1 + i) != \
-			*(unsigned char *)(s2 + i))
-			return (*(unsigned char *)(s1 + i) \
-			- *(unsigned char *)(s2 + i));
-		i++;
+		if(isspace(c) != ft_isspace(c))
+		{
+			write(1, "ft_isspace -> test1 : error!", 28);
+			test = 0;
+			break;
+		}
+		c++;
 	}
-	return (0);
+	if(test == 1)
+	{
+		
+		write(1, "ft_isspace -> test1 : ok!", 25);
+	}
+	return (test);
 }
