@@ -21,6 +21,8 @@ ft_strnstr.c \
 ft_atoi.c \
 ft_isspace.c \
 ft_calloc.c \
+ft_strdup.c \
+test_strdup.c \
 test_calloc.c \
 test_isspace.c \
 test_atoi.c \

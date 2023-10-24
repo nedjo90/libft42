@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:21:47 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/24 10:38:37 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/24 14:21:15 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -44,10 +44,12 @@ int			test_strnstr(void);
 int			test_atoi(void);
 int			test_calloc(void);
 int			test_isspace(void);
+int			test_strdup(void);
 //fonction
 char		*ft_strchr(const char *s, int c);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char		*ft_strdup(const char *s1);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
