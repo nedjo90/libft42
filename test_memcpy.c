@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:58:29 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/23 09:50:52 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/25 23:23:00 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -130,6 +130,9 @@ int	test_memcpy(void)
 	else
 	{
 		write(1, "ft_memcpy -> test5 : ok!", 25);
-	}	
+	}
+	free(destStr1);
+	free(destStr2);
+	free(testNull);
 	return (test);
 }

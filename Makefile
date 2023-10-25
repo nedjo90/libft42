@@ -30,6 +30,8 @@ ft_count_char_in_str.c \
 ft_index_strchr.c \
 ft_split.c \
 ft_itoa.c \
+ft_strmapi.c \
+test_strmapi.c \
 test_itoa.c \
 test_split.c \
 test_strtrim.c \
@@ -61,7 +63,7 @@ test_strlcpy.c \
 test_strlen.c \
 
 CC=gcc
-CFLAGS =-Wall -Wextra -Werror 
+CFLAGS =-Wall -Wextra -Werror -fsanitize=address -g 
 OBJ=$(SRCS:.c=.o)
 AR=ar rcs
 RM=rm -rf

@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:21:47 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/25 20:10:12 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/25 22:19:16 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -98,7 +98,6 @@ int			test_putchar_fd(void);
 int			test_putstr_fd(void);
 int			test_putendl_fd(void);
 int			test_putnbr_fd(void);
-int			test_itoa(void);
 //fonction
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
