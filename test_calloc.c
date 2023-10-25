@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:48:09 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/24 15:21:03 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/24 19:25:17 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,10 +150,39 @@ int	test_calloc(void)
 	tab19 = (int *) ft_calloc(-10, INT_MAX);
 	tab20 = (int *) calloc(-10, INT_MAX);
 	if ((tab19 == NULL && tab20 == NULL) || memcmp(tab19, tab20, 1) == 0)
-		write(1, "ft_calloc -> test10 : ok!", 25);
+		write(1, "ft_calloc -> test10 : ok!\n", 26);
 	else
 	{
-		write(1, "ft_calloc -> test10 : error!", 29);
+		write(1, "ft_calloc -> test10 : error!\n", 30);
+		test = 0;	
+	}
+
+	//test9
+	int *tab21;
+	int *tab22;
+	
+	tab21 = (int *) ft_calloc(1, 1);
+	tab22 = (int *) calloc(1, 1);
+	if ((tab21 == NULL && tab22 == NULL) || memcmp(tab21, tab22, 1) == 0)
+		write(1, "ft_calloc -> test11 : ok!\n", 26);
+	else
+	{
+		write(1, "ft_calloc -> test11 : error!\n", 30);
+		test = 0;	
+	
+	}
+	
+	//test9
+	int *tab23;
+	int *tab24;
+	
+	tab23 = (int *) ft_calloc(0, 0);
+	tab24 = (int *) calloc(0, 0);
+	if ((tab23 == NULL && tab24 == NULL) || memcmp(tab23, tab24, 1) == 0)
+		write(1, "ft_calloc -> test12 : ok!", 25);
+	else
+	{
+		write(1, "ft_calloc -> test11 : error!", 29);
 		test = 0;	
 	}
 	return (test);

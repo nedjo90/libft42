@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:21:47 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/24 15:16:11 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/25 20:10:12 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -98,6 +98,7 @@ int			test_putchar_fd(void);
 int			test_putstr_fd(void);
 int			test_putendl_fd(void);
 int			test_putnbr_fd(void);
+int			test_itoa(void);
 //fonction
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
@@ -105,6 +106,7 @@ char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
 char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char		*ft_itoa(int n);
 void		*ft_striteri(char *s, void (*f)(unsigned int, char *));
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
@@ -142,4 +144,7 @@ void		ft_lstclear(t_list **lst, void (*del)(void *));
 int			test_isspace(void);
 //fonction
 int			ft_isspace(int c);
+int			ft_char_in_str(char const *str, char c);
+int			ft_count_char_in_str(char *str, char c);
+int			ft_index_strchr(char const *s, char c);
 #endif

@@ -6,51 +6,47 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 17:12:56 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/24 17:36:25 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/25 10:56:54 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_istrim(char c, char const *set)
+char	*ft_strncpy(char *dst, char *src, size_t len)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (set[i])
+	while (src[i] != '\0' && i < len)
 	{
-		if (c == set[i])
-			return (1);
+		dst[i] = src[i];
 		i++;
 	}
-	return (0);
+	while (i < len)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
-	size_t	k;
 	char	*str;
 
-	if (s1 == NULL)
-		return (NULL);
+	if (!ft_strlen(s1))
+		return (ft_calloc(1, 1));
 	i = 0;
-	k = 0;
-	j = ft_strlen(s1) - 1;
-	while (ft_istrim(s1[i], set) && i <= j)
+	j = ft_strlen(s1);
+	while (i < j && ft_char_in_str(set, s1[i]))
 		i++;
-	while (ft_istrim(s1[j], set) && j >= 0)
+	while (j > i && ft_char_in_str(set, s1[j - 1]))
 		j--;
-	str = (char *) malloc ((i + j + 1) * sizeof(char));
+	str = (char *) malloc ((j - i) * sizeof(char));
 	if (!str)
 		return (NULL);
-	while (i <= j)
-	{
-		str[k] = s1[i];
-		k++;
-		i++;
-	}
-	str[k] = '\0';
+	ft_strncpy(str, (char *)(s1 + i), j - i);
 	return (str);
 }

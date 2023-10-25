@@ -25,6 +25,13 @@ ft_strdup.c \
 ft_substr.c \
 ft_strjoin.c \
 ft_strtrim.c \
+ft_char_in_str.c \
+ft_count_char_in_str.c \
+ft_index_strchr.c \
+ft_split.c \
+ft_itoa.c \
+test_itoa.c \
+test_split.c \
 test_strtrim.c \
 test_strjoin.c \
 test_substr.c \
