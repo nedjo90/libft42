@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 20:44:53 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/25 22:48:37 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/26 00:38:57 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,7 +14,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int		i;
-	int					size;
+	size_t				size;
 	char				*str;
 
 	if (!s)

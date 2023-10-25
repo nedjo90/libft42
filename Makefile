@@ -63,7 +63,7 @@ test_strlcpy.c \
 test_strlen.c \
 
 CC=gcc
-CFLAGS =-Wall -Wextra -Werror -fsanitize=address -g 
+CFLAGS =-Wall -Wextra -Werror 
 OBJ=$(SRCS:.c=.o)
 AR=ar rcs
 RM=rm -rf

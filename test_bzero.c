@@ -23,7 +23,7 @@ int	test_bzero(void)
 	char str2[] = "je fais un premier test\n";
 	bzero(str + 4, sizeof(char) * 4);
 	bzero(str2 + 4, sizeof(char) * 4);
-	i = strlen(str) - 1;
+	i = (int)strlen(str) - 1;
 	while (i >= 0)
 	{
 		if(str[i] != str2[i])

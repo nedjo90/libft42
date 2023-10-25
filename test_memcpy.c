@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:58:29 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/25 23:23:00 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/26 00:40:18 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -20,7 +20,7 @@ int	test_memcpy(void)
 	int	test;
 
 	test = 1;
-	size = strlen(srcStr) + 1;
+	size = (int)strlen(srcStr) + 1;
 	destStr1 = malloc (size * sizeof(char));
 	destStr2 = malloc (size * sizeof(char)); 
 	memcpy(destStr1, srcStr, (char)size);
@@ -44,7 +44,7 @@ int	test_memcpy(void)
 		write(1, "ft_memcpy -> test1 : ok!\n", 25);
 	}
 	char srcStr2[] = "on change une partie";
-	size = strlen(srcStr2); 
+	size = (int)strlen(srcStr2);
 	memcpy(destStr1, srcStr, (char)size);
 	ft_memcpy(destStr2, srcStr, (char)size);
 	i = 0;
@@ -65,7 +65,7 @@ int	test_memcpy(void)
 	{
 		write(1, "ft_memcpy -> test2 : ok!\n", 25);
 	}
-	size = strlen(srcStr2); 
+	size = (int)strlen(srcStr2); 
 	memcpy(destStr1, "test en direct", (char)size);
 	ft_memcpy(destStr2, "test en direct", (char)size);
 	i = 0;
