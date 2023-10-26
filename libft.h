@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:21:47 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/25 22:19:16 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/26 12:40:56 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -19,6 +19,7 @@
 # include <ctype.h>
 # include <unistd.h>
 # include <limits.h>
+# include <fcntl.h>
 
 //structure
 typedef struct s_list
@@ -106,7 +107,7 @@ char		**ft_split(char const *s, char c);
 char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_itoa(int n);
-void		*ft_striteri(char *s, void (*f)(unsigned int, char *));
+void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);

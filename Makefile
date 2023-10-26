@@ -31,6 +31,16 @@ ft_index_strchr.c \
 ft_split.c \
 ft_itoa.c \
 ft_strmapi.c \
+ft_striteri.c \
+ft_putchar_fd.c \
+ft_putstr_fd.c \
+ft_putendl_fd.c \
+ft_putnbr_fd.c \
+test_putnbr_fd.c \
+test_putendl_fd.c \
+test_putstr_fd.c \
+test_putchar_fd.c \
+test_striteri.c \
 test_strmapi.c \
 test_itoa.c \
 test_split.c \
