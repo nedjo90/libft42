@@ -36,6 +36,8 @@ ft_putchar_fd.c \
 ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c \
+ft_lstnew.c \
+test_lstnew.c \
 test_putnbr_fd.c \
 test_putendl_fd.c \
 test_putstr_fd.c \
