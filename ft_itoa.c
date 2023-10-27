@@ -6,55 +6,58 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 19:45:04 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/25 20:43:24 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/27 01:29:51 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_nb_nb(int nb)
+int	ft_nb_len(int n)
 {
 	int	i;
 
+	if (n == 0)
+		return (1);
+	if (n == -2147483648)
+		return (11);
 	i = 0;
-	while (nb != 0)
+	if (n < 0)
 	{
-		nb /= 10;
+		i++;
+		n *= -1;
+	}
+	while (n != 0)
+	{
+		n /= 10;
 		i++;
 	}
 	return (i);
-}
-
-int	ft_abs(int n)
-{
-	if (n < 0)
-		return (n * -1);
-	return (n);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*nb;
 	int		i;
+	int		size;
+	int		temp;
+	int		signe;
 
-	i = ft_nb_nb(n);
-	if (n == 0)
-		return (ft_strdup("0"));
-	if (n >= 0)
-		nb = malloc(i * sizeof(char));
-	else
-	{
-		nb = malloc((i + 1) * sizeof(char));
-		i++;
-	}
+	i = 0;
+	signe = 1;
+	size = ft_nb_len(n);
+	nb = ft_calloc(size-- + 1, sizeof(char));
 	if (!nb)
 		return (NULL);
-	nb[i--] = '\0';
-	while (n != 0)
+	if (n < 0)
+		signe = -1;
+	while (size >= i)
 	{
-		nb[i--] = ft_abs(n % 10) + 48;
+		temp = n % 10;
+		if (temp < 0)
+			temp *= -1;
+		nb[size--] = temp + 48;
 		n /= 10;
 	}
-	if (i == 0)
-		nb[i] = '-';
+	if (signe == -1)
+		nb[0] = '-';
 	return (nb);
 }

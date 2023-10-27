@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 19:35:00 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/25 19:34:12 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/27 00:01:21 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strndup(const char *s1, size_t n)
 	return (copy);
 }
 
-int	ft_count_not_strchr(char const *s, char c)
+int	ft_count_word(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -64,7 +64,7 @@ int	ft_count_not_strchr(char const *s, char c)
 		}
 		i++;
 	}
-	return (count + 1);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
@@ -72,25 +72,25 @@ char	**ft_split(char const *s, char c)
 	char	**tab_str;
 	int		i;
 	int		j;
+	int		k;
 
 	if (!s)
 		return (0);
 	i = 0;
 	j = 0;
-	tab_str = (char **) malloc (ft_count_not_strchr(s, c) * sizeof(char *));
+	tab_str = (char **) malloc((ft_count_word(s, c) + 1) * sizeof(char *));
 	if (!tab_str)
 		return (0);
-	while (s[i] != '\0')
+	while (j < ft_count_word(s, c))
 	{
-		if (s[i] == c)
+		while (s[i] == c && s[i])
 			i++;
-		else
-		{
-			tab_str[j++] = ft_strndup(s + i, ft_index_strchr(s + i, c));
-			if (!tab_str[j - 1])
-				return (ft_free_tab(tab_str));
-			i += ft_index_strchr(s + i, c);
-		}
+		k = i;
+		while (s[i] != '\0' && s[i] != c)
+			i++;
+		tab_str[j++] = ft_substr(s, k, i - k);
+		if (!tab_str[j - 1])
+			return (ft_free_tab(tab_str));
 	}
 	tab_str[j] = NULL;
 	return (tab_str);

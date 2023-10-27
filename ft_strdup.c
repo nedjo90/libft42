@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:03:45 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/24 14:17:52 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/27 14:43:38 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,24 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*copy;
-	int		size;
+	size_t	size;
 
-	size = (int)ft_strlen(s1);
+	size = ft_strlen(s1);
 	copy = (char *) malloc((size + 1) * sizeof(char));
-	copy[size--] = '\0';
+	if (!copy)
+		return (NULL);
+	copy[size] = '\0';
+	if (size == 0)
+		return (copy);
+	else
+	{
+		size--;
+	}
 	while (size >= 0)
 	{
 		copy[size] = s1[size];
+		if (size == 0)
+			return (copy);
 		size--;
 	}
 	return (copy);

@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:21:47 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/26 12:40:56 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/26 16:16:37 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -141,10 +141,10 @@ void		ft_lstclear(t_list **lst, void (*del)(void *));
 */
 //PERSO
 //test
-int			test_isspace(void);
+//int			test_isspace(void);
 //fonction
-int			ft_isspace(int c);
-int			ft_char_in_str(char const *str, char c);
-int			ft_count_char_in_str(char *str, char c);
-int			ft_index_strchr(char const *s, char c);
+//int			ft_isspace(int c);
+//int			ft_char_in_str(char const *str, char c);
+//int			ft_count_char_in_str(char *str, char c);
+//int			ft_index_strchr(char const *s, char c);
 #endif
