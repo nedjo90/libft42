@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 19:35:00 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/27 00:01:21 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/28 11:18:49 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_count_word(char const *s, char c)
 	{
 		if (s[i] == c)
 			tracker = 0;
-		if (s[i] != c && tracker == 0)
+		else if (s[i] != c && tracker == 0)
 		{
 			count++;
 			tracker = 1;
@@ -77,19 +77,23 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (0);
 	i = 0;
-	j = 0;
+	j = -1;
 	tab_str = (char **) malloc((ft_count_word(s, c) + 1) * sizeof(char *));
+	//char *temp = ft_itoa( ft_count_word(s, c));
+	//write(1, temp, ft_strlen(temp));
 	if (!tab_str)
 		return (0);
-	while (j < ft_count_word(s, c))
+	while (++j < ft_count_word(s, c))
 	{
 		while (s[i] == c && s[i])
 			i++;
 		k = i;
 		while (s[i] != '\0' && s[i] != c)
 			i++;
-		tab_str[j++] = ft_substr(s, k, i - k);
-		if (!tab_str[j - 1])
+		tab_str[j] = ft_substr(s, k, i - k);
+		if (j == ft_count_word(s, c))
+			break;
+		if (!tab_str[j])
 			return (ft_free_tab(tab_str));
 	}
 	tab_str[j] = NULL;
