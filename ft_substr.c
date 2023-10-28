@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:22:30 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/27 16:34:05 by nhan             ###   ########.fr       */
+/*   Updated: 2023/10/28 12:24:33 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = n - start;
 	if (len > n)
 		len = n;
-	str = (char *) malloc((char)len + 1);
+	str = (char *) malloc(len + 1);
 	if (!str)
 		return (NULL);
 	while (i < len && start < n)
