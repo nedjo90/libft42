@@ -32,11 +32,13 @@ ft_putchar_fd.c \
 ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c \
-ft_lstnew.c \
+
+BONUS=ft_lstnew.c \
 
 CC=gcc
 CFLAGS =-Wall -Wextra -Werror 
 OBJ=$(SRCS:.c=.o)
+BONUSOBJ=$(BONUS:.c=.o)
 AR=ar rcs
 RM=rm -rf
 NAME=libft.a
@@ -46,8 +48,11 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(AR) $@ $^
 
+bonus: $(BONUSOBJ) $(OBJ)
+	$(AR) $(NAME) $^
+
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(BONUSOBJ)
 
 fclean: clean
 	$(RM) $(NAME)
