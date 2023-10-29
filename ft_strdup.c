@@ -28,12 +28,11 @@ char	*ft_strdup(const char *s1)
 	{
 		size--;
 	}
-	while (size >= 0)
+	while (size > 0)
 	{
 		copy[size] = s1[size];
-		if (size == 0)
-			return (copy);
 		size--;
 	}
+	copy[size] = s1[size];
 	return (copy);
 }
