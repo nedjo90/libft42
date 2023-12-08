@@ -6,35 +6,22 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:01:53 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/27 14:43:11 by nhan             ###   ########.fr       */
+/*   Updated: 2023/12/08 13:38:07 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-	size_t	j;
-
-	if (dst == src)
+	if (dst < src)
+		ft_memcpy(dst, src, len);
+	else if (dst == src)
 		return (dst);
-	j = len;
-	if (dst >= src && dst < src + len)
-	{
-		while (len > 0)
-		{
-			((char *)dst)[len - 1] = ((char const *)src)[len - 1];
-			len--;
-		}
-	}
 	else
 	{
-		i = 0;
-		while (i < j)
-		{
-			((char *)dst)[i] = ((char const *)src)[i];
-			i++;
-		}
+		while (len--)
+			((unsigned char *)dst)[len] \
+			= ((unsigned const char *)src)[len];
 	}
 	return (dst);
 }

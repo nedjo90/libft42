@@ -6,34 +6,19 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:45:28 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/26 22:27:59 by nhan             ###   ########.fr       */
+/*   Updated: 2023/12/08 13:47:27 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_nb(int n)
-{
-	int	i;
-
-	if (n == 0)
-		return (1);
-	i = 0;
-	while (n > 0)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
-}
-
-void	ft_putnbr2_fd(int n, int fd)
+static void	ft_putnbr_positive_fd(int n, int fd)
 {
 	char	nb;
 
 	if (n > 0)
 	{
-		ft_putnbr2_fd(n / 10, fd);
+		ft_putnbr_positive_fd(n / 10, fd);
 		nb = n % 10 + 48;
 		ft_putchar_fd(nb, fd);
 	}
@@ -56,5 +41,5 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		n *= -1;
 	}
-	ft_putnbr2_fd(n, fd);
+	ft_putnbr_positive_fd(n, fd);
 }

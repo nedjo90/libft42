@@ -6,7 +6,7 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:32:19 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/28 10:58:27 by nhan             ###   ########.fr       */
+/*   Updated: 2023/12/08 12:49:16 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,12 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
+	size_t	max;
 
-	if (count == 0 && size == 0)
-		count = 1;
-	else if (count == 0 || size == 0)
+	max = (size_t) - 1;
+	if (size != 0 && count > (max / size))
 		return (NULL);
-	else if ((((int)count < 0 && (int)size < 0) \
-		|| count >= 2147483647 || size >= 2147483647))
-		return (NULL);
-	ptr = malloc((int)size * (int)count);
+	ptr = malloc (count * size);
 	if (!ptr)
 		return (NULL);
 	ft_bzero(ptr, count * size);

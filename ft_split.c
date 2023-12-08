@@ -6,16 +6,18 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 19:35:00 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/28 12:22:07 by nhan             ###   ########.fr       */
+/*   Updated: 2023/12/08 13:57:06 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_free_tab(char **tab)
+static char	**ft_free_tab(char **tab)
 {
 	int	i;
 
+	if (!tab)
+		return (NULL);
 	i = 0;
 	while (tab[i])
 	{
@@ -26,28 +28,7 @@ char	**ft_free_tab(char **tab)
 	return (NULL);
 }
 
-char	*ft_strndup(const char *s1, size_t len)
-{
-	char	*copy;
-	size_t	n;
-	size_t	i;
-
-	i = 0;
-	n = ft_strlen(s1);
-	if (n > len)
-		n = len;
-	copy = (char *)calloc(n + 1, sizeof(char));
-	if (!copy)
-		return (NULL);
-	while (i <= n)
-	{
-		copy[i] = s1[i];
-		i++;
-	}
-	return (copy);
-}
-
-int	ft_count_word(char const *s, char c)
+static int	ft_count_word(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -56,9 +37,7 @@ int	ft_count_word(char const *s, char c)
 	i = 0;
 	count = 0;
 	tracker = 0;
-	if (*s == 0)
-		return (0);
-	while (s[i] != '\0')
+	while (s && s[i] != '\0')
 	{
 		if (s[i] == c)
 			tracker = 0;

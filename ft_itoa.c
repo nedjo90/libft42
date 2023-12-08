@@ -6,12 +6,12 @@
 /*   By: nhan <necat.han42@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 19:45:04 by nhan              #+#    #+#             */
-/*   Updated: 2023/10/27 01:29:51 by nhan             ###   ########.fr       */
+/*   Updated: 2023/12/08 12:54:00 by nhan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_nb_len(int n)
+static int	ft_nb_len(int n)
 {
 	int	i;
 
